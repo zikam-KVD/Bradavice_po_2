@@ -12,7 +12,11 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @vite([
+            'resources/css/app.css', 
+            'resources/js/app.js', 
+            'resources/sass/app.scss'
+            ])
 
         <!-- Styles -->
         @livewireStyles
@@ -23,5 +27,17 @@
         </div>
 
         @livewireScripts
+        <footer>
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div>
+                    995 - 2025
+                </div>
+                <div class="footer--links">
+                    <a href="#">Správa webu</a>
+                    <a href="#">Podmínky</a>
+                    <a href="#">Přístupnost</a>
+                </div>
+            </div>            
+        </footer>
     </body>
 </html>

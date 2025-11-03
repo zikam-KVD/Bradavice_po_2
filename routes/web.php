@@ -8,7 +8,16 @@ Route::get('/', function () {
     $koleje = College::all();
     //dd($koleje);
 
-    return view('welcome', ['colleges' => $koleje]);
+    $maxHodnota = College::max('hodnoceni');
+    $pixelNaBod = 0;
+
+    if(0 != $maxHodnota) {
+        $pixelNaBod = 150 / $maxHodnota;   
+    }    
+
+    return view('welcome', [
+        'colleges' => $koleje, 'pomocnaProm' => $pixelNaBod
+    ]);
 });
 
 Route::view('/video', 'videoHarry')->name("videjko"); 
